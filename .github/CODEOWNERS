@@ -1,0 +1,5 @@
+# This document specifies who gets requested to review GitHub pull requests.
+# Each line is a file pattern followed by one or more owners.
+
+# Default for the meta repo
+*       @haveno-dex/core-team

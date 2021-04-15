@@ -1,0 +1,269 @@
+Logs of the first public Haveno meeting in #haveno-dev  (logs taken from freenode) (15/04/2021)
+
+<ErCiccione>	Here we are! Welcome people to the first public Haveno meeting!
+<ErCiccione>	Before starting let's make a round of greetings to have an idea of who is here.
+<ErCiccione>	Hi everybody!
+<fischdecasio[m]>	hey
+<rbrunner7[m]>	Grüezi mitenand
+<woodser[m]>	👋
+<newsyp[m]>	Hello
+<ratthing69[m]>	👋
+<CCosta[m]>	hey hey right from 🇨🇦 
+<rupee[m]>	👋
+<monetari[m]>	hello
+<jrdse[m]>	Hello :)
+<sgp_>	hello!
+<bobbieweirder[m]>	👋
+<anhdres[m]>	hola!
+<justverify[m]>	Hey 👋
+<ErCiccione>	Nice crowd! Thanks for coming folks
+<ErCiccione>	so, first point in the agenda (which is here: https://github.com/haveno-dex/haveno-meta/issues/3):
+<ErCiccione>	1. Updates about current status of the project
+<ErCiccione>	First of all let me say that the response from the Monero community has been nothing short than amazing
+<ErCiccione>	the support we received since right after the announcement was really crazy. Thank you all
+<kayront>	<3
+<ErCiccione>	Today we have only good news to share, so let's get started :)
+*	artfulplonker[m] (artfulplon@gateway/shell/matrix.org/x-pyligaqvjgfhlfxq) has joined
+<ErCiccione>	We have a solid short term plan and we can safely say we have our lead designer. I'll leave the floor to woodser for the details about the current situation and what needs to be done.
+<woodser[m]>	hello all
+<woodser[m]>	glad to have you here
+<woodser[m]>	there is much to do to make Haveno production ready
+<woodser[m]>	we're trying to break down the major tasks and parallelize as much as possible
+<woodser[m]>	happening simultaneously will be user interface design and getting the backend, in Java, ready to feed the frontend, expected to be in react
+*	donkeydonkey (~donkeydon@159.65.105.238) has joined
+<woodser[m]>	dracog is leading ui design.  help will be very welcome to develop the design concepts and especially to flesh out design details when it comes to that
+<woodser[m]>	currently we're creating an initial estimate for the time and effort needed for the redesign
+<woodser[m]>	in the meantime, there is a ton to do to get the core ready.  many of these are clearcut and ready for developer help
+*	woodser[m]  < https://matrix.org/_matrix/media/r0/download/matrix.org/wrxFoLeLcTJQBZPGorPdLDGy/message.txt >
+*	donkeydonkey[m] (donkeydonk@gateway/shell/matrix.org/x-jxzqfyxdfzvyyqqb) has joined
+<ErCiccione>	(i will open issues in the next days for the tasks that don't have one yet)
+<woodser[m]>	once the design is in place, there'll be effort to design and implement the API binding
+<woodser[m]>	(much of that can begin sooner)
+<woodser[m]>	I yield the floor back :)
+<ErCiccione>	Thanks woodser. So this is the stuff that people can help with
+<ErCiccione>	within 2 weeks we will be able to have a clear picture of how much work will be needed for the redesign and for the PoC,
+<rbrunner7[m]>	Is there any place where we could see earlier works of that lead UI designer, dracog?
+<ErCiccione>	When we will ahve the clear picture, we will probably open a CCS proposal, to get the work funded
+<rbrunner7[m]>	Just to learn a little bit about them
+<woodser[m]>	they designed this tool (shameless plug): https://cryptostorage.com/
+<jrdse[m]>	I would like to get started on the point: fix fiat trades in the current platform. currently only crypto trades work. What do you guys think? If someone wants to help me, it would be much appreciated also
+<ErCiccione>	Note that dracog is still familiarizing himself with the platform, we agree to meet again in 2 weeks for estimates. Same for the PoC with electrum-java
+<rbrunner7[m]>	Is that fiat trading missing, or buggy, or not yet properly "translated"?
+<ErCiccione>	So, we will call another meeting in the next days that will happen during the weekend between 30th and 2nd of May
+<ratthing69[m]>	<ErCiccione "Note that dracog is still famili"> electron***-java 
+<ErCiccione>	ratthing69: right, sorry. I confuse them all the time :P
+<jrdse[m]>	It is buggy from what I understood. It is definitely not missing as once the problem is solved I believe that it would work for all fiat currencies already implemented in bisq.
+*	lederstrumpf (lederstrum@gateway/shell/matrix.org/x-esicrmlsjznqvwad) has joined
+<ErCiccione>	it's buggy yes, problem tracked here: https://github.com/haveno-dex/haveno/issues/7
+<ErCiccione>	Any question about woodser's points?
+<ratthing69[m]>	What can dev-newbs do to help right now?  Awaiting marching orders 
+<rbrunner7[m]>	"fix the price per xmr so it's accurate" - is that a question of rate source queries?
+<woodser[m]>	fixing the price per xmr should be low hanging fruit and definitely needed
+<CCosta[m]>	a little suggestion: It'd be really great if the issues also included some context about the code itself too for those that are not familiar with Bisq's codebase - the easier we make for folks to contribute, the better (IMO)
+<woodser[m]>	<rbrunner7[m] ""fix the price per xmr so it's a"> currently it shows the price per btc as no effort was made to show xmr
+<woodser[m]>	true true utxobr
+<woodser[m]>	I can open issues for these with more details
+*	raas[m] (raasmatr1@gateway/shell/matrix.org/x-wxqwcqhupbmznyrv) has joined
+<newsyp[m]>	<jrdse[m] "I would like to get started on t"> I want to help, so far I’ve managed to sync with the monero mainnet and stagenet. Still waiting for btc core to sync though. While thats been syncing I moved a bit farther down the checklist and got to git clone havenos code. 
+<woodser[m]>	should be no need to sync on a local stagenet
+<woodser[m]>	and that is definitely recommended for development
+<ErCiccione>	alright let's keep the questions for later, let's move on :)
+<ErCiccione>	3. Expansion of the community on social medias
+<ErCiccione>	this is a quick one
+<ErCiccione>	we don't need to expand the userbase at the moment, but we do need to spread the voice and attract developers and contributors
+<jrdse[m]>	<newsyp[m] "I want to help, so far I’ve mana"> Yeah, you don't need to sync the btc blockchain. If you need to use the btc, you would use the regtest
+<ErCiccione>	so would be good to be present in those platform where these people can find us easily.
+<ErCiccione>	The easy choice is reddit
+<ErCiccione>	i already registered the /r/haveno subreddit, now we only need people willing to help us maintain it
+<ErCiccione>	i have no experience with reddit moderation, but if somebody here dose and is willing to take care of the subreddit, please let me know.
+<rbrunner7[m]>	With "maintain" you mean a moderator, right?
+<ErCiccione>	yep
+<rbrunner7[m]>	I always wanted to play overlord ... not, I am afraid ...
+<jrdse[m]>	I could help being a moderator/contributor also
+<ErCiccione>	nice. People interested and with experience please let me know, i will contact you later on.
+<CCosta[m]>	<ErCiccione "nice. People interested and with"> no experience modding, but, happy to help :) sent a request there 👍️
+<fischdecasio[m]>	i regularly write about haveno on the monero threads on 4chan's /biz/ board. also got the initial word of the project's existence from there
+*	u29601mg6ba93j[m (u29601mg6b@gateway/shell/matrix.org/x-unqaofpidormdccv) has joined
+<ErCiccione>	nice. More and more people are joining these channels everyday. So that menas that the word is spreading a bit :)
+<ratthing69[m]>	<fischdecasio[m] "i regularly write about haveno o"> based
+<ErCiccione>	now let's move to the fun part
+<ErCiccione>	4. Discuss logos and decide which one is best 
+<ErCiccione>	We received a crazy amount of designs. I didn't expect that many, thank you again everybody.
+<ErCiccione>	The designs were a lot, so i and woodser picked the ones we both liked  and we will let you folks vote the one you like the most!
+<ErCiccione>	the choice is between 3 designs
+<ErCiccione>	i will post them now, take a look at them and then post a comment with the number of the logo you like the most. Please don't use matrix reactions, as those won't show up on freenode. Just send a message with the number.
+<ErCiccione>	so:
+<ErCiccione>	1. H island: https://user-images.githubusercontent.com/31753665/114597401-20c0c180-9c67-11eb-9c13-f56913fcdbe1.png
+<ErCiccione>	2. container ship with negative H: https://user-images.githubusercontent.com/31753665/114571678-3b863c80-9c4d-11eb-9dca-10bdeeb53f23.png
+<ErCiccione>	3. Negative H with Monero colors: https://user-images.githubusercontent.com/28106476/114716327-3e0f9180-9d34-11eb-8542-44d119552304.png
+<ErCiccione>	I'd vote for 1. Super original and immediately catches the eye. Also super visible when small.
+<ratthing69[m]>	1
+<CCosta[m]>	`1` 
+<sgp_>	1
+<bobbieweirder[m]>	1
+<fischdecasio[m]>	1
+<jrdse[m]>	3
+<guacamole69[m]>	1 with colors of 3
+<rbrunner7[m]>	What's the meaning of the dot in 1? Does it have a meaning?
+<woodser[m]>	^ was wondering the same
+<anhdres[m]>	1
+<fischdecasio[m]>	i think it's meant to symbolize the marker of a city on a map
+<bobbieweirder[m]>	I like the dot much better than the original star, but am curious as to what it means also
+<fischdecasio[m]>	like a port town
+<ErCiccione>	it does: 3. Negative H with Monero colors: https://user-images.githubusercontent.com/28106476/114716327-3e0f9180-9d34-11eb-8542-44d119552304.png
+<rbrunner7[m]>	Ah!
+<ErCiccione>	but anhdresis here :)
+<anhdres[m]>	<bobbieweirder[m] "I like the dot much better than "> exactly, but if you have to ask then it's not working haha
+<ErCiccione>	 * it does
+<anon_udxf6fdz[m]>	2. Container ship
+<anhdres[m]>	it's meant to be the dot on the map that pinpoints the location of the harbour city
+<bobbieweirder[m]>	Then actually I agree that the star makes more sense than the dot. Can we make it a nautical star?
+<rbrunner7[m]>	Yeah, but it's slightly inland, isn't it?
+<fischdecasio[m]>	was wondering the same
+<artfulplonker[m]>	<rbrunner7[m] "Yeah, but it's slightly inland, "> XD was waiting for this
+<rbrunner7[m]>	I am torn between 1 and 3, with a slight advantage for 1
+<anhdres[m]>	<rbrunner7[m] "Yeah, but it's slightly inland, "> yes, I could make the bay larger
+<ErCiccione>	Personally i'm fine with the design as it is
+*	omnero[m] uploaded an image: (27KiB) < https://matrix.org/_matrix/media/r0/download/matrix.org/gORHzFuIXExvDwalwHOAiCBl/114249147-0acaac80-999a-11eb-982f-20ec8ed4ca03.png >
+<omnero[m]>	what about fischdecasio's logo 
+<ratthing69[m]>	it may be best to pick one of the 3 and suggest minor improvements down the road
+<omnero[m]>	?
+<woodser[m]>	feedback I got from others was to maybe simplify the design with fewer colors, "less is more"
+<ErCiccione>	so 1 (H island) seems to be the clear winner
+<omnero[m]>	3
+<justverify[m]>	1 original and eye catching
+<newsyp[m]>	That was cool, just witnessed the logo get picked
+<rbrunner7[m]>	Does anybody know anything similar that could cause any trouble?
+<newsyp[m]>	🙌
+<ErCiccione>	what kind of trouble?
+<rbrunner7[m]>	Stealing the design, or similar
+<newsyp[m]>	That’s a milestone
+<ErCiccione>	I don't know of any similar design
+<rbrunner7[m]>	Maybe I just worry to much :)
+<woodser[m]>	<omnero[m] "114249147-0acaac80-999a-11eb-982"> I liked this one and the one here all the way to the right too: https://user-images.githubusercontent.com/71085002/114533633-62913e00-9c4e-11eb-892a-7b148dbe0efd.png.  in the end just needed to narrow it down
+<anhdres[m]>	for what is worth, I didn't base it on any other logo, but it's pretty simple so there could be similarities
+<ErCiccione>	no worries, we got already some crap because of the name we chose, that was enough :P
+<rbrunner7[m]>	Well said
+<anhdres[m]>	you could have named it zcasho
+<fischdecasio[m]>	kek
+<newsyp[m]>	Lol
+<ErCiccione>	lol
+<sgp_>	anhdres: congrats on winning this one :D
+<ErCiccione>	alright folks, it's official. We have a logo. anhdres: could you send me the logo in all versions you have?
+<newsyp[m]>	pop the champagne boys
+<anhdres[m]>	<sgp_ "anhdres: congrats on winning thi"> haha, it was statiscally due
+<ErCiccione>	versions == formats
+<newsyp[m]>	🍾
+<anhdres[m]>	<ErCiccione "alright folks, it's official. We"> sure
+<ErCiccione>	Thanks :)
+<ErCiccione>	So, as i already mentioned we will call another meeting for some day during the weekend between  30th and 2nd of May.
+<ErCiccione>	Important stuff during these two weeks. We will keep everybody updated so keep an eye on these chats.
+<ErCiccione>	next point
+<ErCiccione>	5. Questions from the community
+<ErCiccione>	so.. go nuts. What questions do you have?
+<ratthing69[m]>	WHEN CAN I USE THIS ON MOBILE 
+*	raptly[m] (raptlymatr@gateway/shell/matrix.org/x-rxhbjrxvfpzkuqrf) has joined
+<ratthing69[m]>	🤣
+<jrdse[m]>	I'm a bit confused on who works on what
+<ErCiccione>	jrdse: 
+<artfulplonker[m]>	will haveno be prepared to use domain addresses for 'look up'. i'm thinking about yat's for example
+<bobbieweirder[m]>	we are looking at only [fiat]/XMR pairs and then all XMR/[crypto] pairs right?
+<CCosta[m]>	when announcing Haveno, did you get any messages from Bisq developers? It'd be amazing if we had some core devs helping out too
+<sgp_>	I can comment on fees a bit after if people have them. We are still figuring everything out, but we have the flexibility of a CPU mineable algorithm to play with in appropriate cases
+<ErCiccione>	jrdse: we have two parallel works going on: design and development. During the next couple of weeks we will investigate the possibilty to use electrum-java and estimate the work on the design. In the meantime, the issues woodser mentioned need to be worked. Anybody who can help with those is welcome.
+<woodser[m]>	*electron-java
+<CCosta[m]>	<woodser[m] "*electron-java"> lol again ahhaha
+<ErCiccione>	Issues will be opened to keep track of everything and help people understand what needs to be worked on. Does that answer your question jrdse?
+<justverify[m]>	For me the hardest point to solve is how to decentralise the the arbitration process. Trusting some Haveno members is nice but not a trustless solution
+<ErCiccione>	damn it. Sorry folks, i'm tired today :)
+<ErCiccione>	<CCosta[m] "when announcing Haveno, did you "> I did, yes. We have 2 bisq devs interested in contributing
+<woodser[m]>	<ratthing69[m] "WHEN CAN I USE THIS ON MOBILE "> would love to see it on mobile but would require running the java and react in a mobile app.  hasn't happened yet for bisq to my knowledge?
+<ratthing69[m]>	https://docs.bisq.network/bisq-mobile.html
+<rbrunner7[m]>	Yeah, the reaction of the Bisq community to all this, quite in general, will be interesting to see ...
+<ErCiccione>	nope, but they are working on it. Which means everything and nothing
+<justverify[m]>	<ErCiccione "I did, yes. We have 2 bisq devs "> Sounds great 
+<sgp_>	<justverify[m] "For me the hardest point to solv"> we are not going to trust random arbitrators
+*	LukeAldevindo (43bd6653@c-67-189-102-83.hsd1.or.comcast.net) has joined
+<ErCiccione>	exactly. Arbitrators will be members of the core team and trusted personalities.
+<jrdse[m]>	<ErCiccione "Issues will be opened to keep tr"> Yeah, that answers in the high level. But from the practical point of view, could we do some sort of Agile boards to see which tasks are being worked on and who is working on them?
+<ErCiccione>	such sensitive role cannot be given randomly
+<woodser[m]>	<bobbieweirder[m] "we are looking at only [fiat]/XM"> I'd hope both are supported on initial release.  should be technically feasible since they're very similar technically
+<sgp_>	github projects should work for that nicely
+<ErCiccione>	jrdse: absolutely. I already started to set up GitHub's board. Soon we will open issues and fill it up. There are already 3 projects
+<sgp_>	just a simply kanban board
+<sgp_>	 * just a simple kanban board
+<CCosta[m]>	<sgp_ "just a simply kanban board"> +1
+<ErCiccione>	i will write some docs in the next days about the structure we intend to use
+<ratthing69[m]>	where is the design discussion happening?
+<ErCiccione>	ratthing69: We will probably open a dedicated repository in the next days
+<anhdres[m]>	let me know where should I upload graphic files for the logo
+<anhdres[m]>	github?
+<jrdse[m]>	<ErCiccione "jrdse: absolutely. I already sta"> Awesome!
+<ErCiccione>	anhdres: saw your message, will answer in a bit
+<woodser[m]>	<artfulplonker[m] "will haveno be prepared to use d"> should be technically feasible of course priority would be in getting basic function to work first
+<rbrunner7[m]>	Had a closer look as those yats lately. Was a bit underwhelmed. Age problem problaby.
+<ratthing69[m]>	normies love em
+<woodser[m]>	<justverify[m] "For me the hardest point to solv"> atomic swaps are more ideal for this reason and we're interested to support them
+<omnero[m]>	<woodser[m] "atomic swaps are more ideal for "> absolutely
+<sgp_>	agreed, where atomic swaps are possible, they will be used instead
+<sgp_>	2/3 multisig is nice however because you can use it to trade against anything
+<jrdse[m]>	Anyone knows, just for curiosity, the ratio of fiat/crypto and crypto/crypto exchanged on bisq?
+<sgp_>	and if the trade goes as expected for both parties, no need to speak with the arbitrator at all
+<newsyp[m]>	<sgp_ "2/3 multisig is nice however bec"> What is 2/3 multisig?
+<justverify[m]>	<sgp_ "we are not going to trust random"> Sure, but wouldn’t be better to implement a security deposit system for arbitrators? This would eventually prevent arbitrators from doing any damage. At the same time this would increase also users’ confidence in the system 
+<sgp_>	no that's just inefficient
+<sgp_>	and you still need to trust them
+<justverify[m]>	<sgp_ "agreed, where atomic swaps are p"> Oh ok nice 👍 
+<rbrunner7[m]>	And you have to trust the deposit manager :)
+<sgp_>	you are just moving trust around
+<sgp_>	then you need to trust whoever holds the bond, etc
+<omnero[m]>	<sgp_ "and if the trade goes as expecte"> but it makes the whole dex vulnerable to big pockets as it could freeze up a lot of capital in disputes
+<jrdse[m]>	<justverify[m] "Sure, but wouldn’t be better to "> Quis custodiet ipsos custodes?
+<sgp_>	whose capital? of the trading counterparties?
+<kayront>	<jrdse[m]> Anyone knows, just for curiosity, the ratio of fiat/crypto and crypto/crypto exchanged on bisq? --- i believe XMR/BTC dominates
+<omnero[m]>	yes
+<sgp_>	yeah that's why the counterparties will have to submit bonds which will be forfeited if wrongdoing is determined
+<anon_udxf6fdz[m]>	<jrdse[m] "Yeah, that answers in the high l"> taiga.getmonero.org
+<jrdse[m]>	<kayront "<jrdse[m]> Anyone knows, just"> Wow, BTC/XMR dominates even XMR/fiat?
+<sgp_>	<jrdse[m] "Wow, BTC/XMR dominates even XMR/"> yup almost always has
+<kayront>	there is no XMR/fiat in bisq jrdse[m] 
+<omnero[m]>	<sgp_ "yeah that's why the counterparti"> have to check the details
+<omnero[m]>	tx
+<sgp_>	details are definitely scare right now, but the discussion is being had
+<sgp_>	we absolutely want to be mindful of cost of capital locked in disputes
+<ErCiccione>	anon_udxf6fdz: i've had used taiga for some time. We dont need it. GitHub will be fine. 
+*	mgul (~mgul@14.233.141.77.rev.sfr.net) has joined
+<sgp_>	yeah taiga sucks lol
+<jrdse[m]>	<kayront "there is no XMR/fiat in bisq jrd"> Ah okay, then here is our big advantage then :p
+<kayront>	it is the raison d'etre of haveno jrdse[m] .. :p
+<kayront>	you can emulate XMR/fiat in bisq, but you always need BTC in the middle. it's cumbersome
+<kayront>	with haveno, no more hodling BTC to pay fees and security deposits
+<sgp_>	on the subject of trading bonds, I have a question for everyone here
+<newsyp[m]>	Shoot
+<anhdres[m]>	more alternatives based on what we were discussing. I still think the a is the best
+*	anhdres[m] uploaded an image: (53KiB) < https://matrix.org/_matrix/media/r0/download/matrix.org/rOkUspEuesNaUUEYxoSqaDDN/image.png >
+<omnero[m]>	a
+<sgp_>	we have two options: bonds held in 2/2 multisig (1 key to bond issuer, 1 key Haveno), or 2/3 multisig (1 key to bond issuer, 1 key Haveno, 1 key independent trusted party)
+<ratthing69[m]>	I actually kind of like C
+<ratthing69[m]>	maybe smaller star
+<CCosta[m]>	`a`
+<sgp_>	A
+<ErCiccione>	agree a is still the best one
+<kayront>	trusted party? surely fluffy, since haveno means harbor, there will always be plenty of boats around..
+<sgp_>	pros and cons of each option:
+<sgp_>	for 2/2: PRO less likelihood of maleficence, CON can't seize bond to compensate other party (can only "burn" funds)
+<sgp_>	for 2/3, opposite I suppose
+<sgp_>	this is still being discussed but I wanted to hear others' thoughts
+<ErCiccione>	Just want to point out that the discussion about arbitration is important and will have to happen, but right now we still have to build all the rest :)
+<kayront>	how is it working nowdays in bisq ?
+<kayront>	good point ErCiccione 
+<sgp_>	ErCiccione: yup :p
+<woodser[m]>	bisq uses 2/2 multisig and a refund process if one party disappears
+<sgp_>	if there are other pressing matters, jump ahead with those
+<ErCiccione>	so let's wrap the meeting up for now, the hour has passed and we basically already went trough point 6.
+<ErCiccione>	Feel free to discuss the arbitration, but i think we can consider the meeting over
+<woodser[m]>	whereas we use 2/3 multisig where an arbitrator resolves the dispute, and a trade fee to deter order book spam
+*	mgul has quit (Quit: Leaving)
+<ErCiccione>	so: meeting over
+<ErCiccione>	thanks everybody for coming. Stay tuned for the next updates :)
+<artfulplonker[m]>	time to party 🎉

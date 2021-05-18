@@ -1,0 +1,81 @@
+<ErCiccione>	It's meeting time!
+*	raptly[m] has quit (Quit: Idle for 30+ days)
+*	swiftlycertain[m has quit (Quit: Idle for 30+ days)
+*	coinsbayz[m] has quit (Quit: Idle for 30+ days)
+<ErCiccione>	Hello everybody, thanks for joining!
+<ErCiccione>	first, let's make a round of greetings to have an idea of who is here.
+<ErCiccione>	Hi folks!
+<woodser[m]>	hello
+<monerobull[m]>	Hello guys.
+<newsyp[m]>	Wats up
+*	evolbit (evolbitmat@gateway/shell/matrix.org/x-ukvpsbggowiqlmrd) has joined
+*	karat (59d9d5de@adsl-89-217-213-222.adslplus.ch) has joined
+*	karat has quit (Client Quit)
+<ErCiccione>	Not too crowded today :)
+<ErCiccione>	so, the agenda for the meeting is here: https://github.com/haveno-dex/haveno-meta/issues/7
+<ErCiccione>	In this meeting we will give an overview of what has been done, and what needs to be worked on.
+<ErCiccione>	i'll leave the floor to woodser in a second, but first let me say that we received a lot of donations from members of the Monero and Bitcoin community.
+<ErCiccione>	That's amazing and we are super grateful for the trust. We promise we'll make good use of those funds!
+<ErCiccione>	now, a lot has been done since the last meeting. Including the website, which you can find here: https://github.com/haveno-dex/haveno-site
+<ErCiccione>	needs only to be tweaked and then will be online soon.
+<ErCiccione>	Thanks a lot to the Monero Core team, who allowed us to use their mailing list service (which will be online soon)
+<ErCiccione>	now let's get to the juicy stuff. Woodser do you want to jump in?
+<woodser[m]>	sure I just want to give an overview of the progress we've made since last meeting, briefly list next priorities, and what we're looking for help with
+<woodser[m]>	fiat trades are now working
+<woodser[m]>	we created a ui proof of concept: a react app with typescript using grpc-web and a proxy (envoy) to hit Haveno's gRPC daemon): https://github.com/haveno-dex/haveno-ui-poc
+<woodser[m]>	Haveno was fully rebased onto the latest Bisq to pick up ~6 months of development to the daemon api
+<woodser[m]>	prices are now based on XMR using Bisq's price feed. developing our own feed needs further discussion and contributors if we deem this a priority
+<woodser[m]>	all Bisq logos were replaced with Haveno logos and our logo ascii art was added to the terminal by premek - looks pretty good to start the application with our own branding
+<woodser[m]>	we more or less decided on a modified core trade protocol: https://github.com/haveno-dex/haveno/blob/master/docs/trade-protocol.md
+<woodser[m]>	the main trade flows were reviewed with the designer, dracog, who is now synthesizing this into first draft main screens
+<woodser[m]>	we established a bounty system and want to put it to more use
+<woodser[m]>	for next overall priorities, work is in progress to increase the trade limits by premek; working on final testing (I think the limit should be increased another factor of 10)
+<woodser[m]>	we need to implement the new core trade protocol, which depends on some additions to monero-wallet-rpc which I'm working on
+<woodser[m]>	and it's priority to create and share the first draft of main ui screens next
+*	woodser[m]  < https://matrix.org/_matrix/media/r0/download/matrix.org/ptmgtbiTtlolQGwjtrkXBpbp/message.txt >
+<woodser[m]>	that's it from me really.  glad to see it seems clear what's next
+<ErCiccione>	Thanks woodser
+<ErCiccione>	let's make a summary of the situation:
+<ErCiccione>	we plan to split Haveno in 2, one will be the core part and the other the actual user interface,
+<ErCiccione>	the poc woodser posted (https://github.com/haveno-dex/haveno-ui-poc) is a react interface interacting with the "core" in the main "haveno" repository
+<ErCiccione>	(a summary for the less technical people around)
+<ErCiccione>	I'll expand a bit on the bounty system
+<Lizzie[m]>	we created a ui proof of concept: a react app with typescript using grpc-web and a proxy (envoy) to hit Haveno's gRPC daemon)
+<Lizzie[m]>	Is it a web browser interface to Haveno? What will be the main form of accessing the network? Through a dedicated desktop client, or through a website?
+<Lizzie[m]>	 * >we created a ui proof of concept: a react app with typescript using grpc-web and a proxy (envoy) to hit Haveno's gRPC daemon)
+<Lizzie[m]>	Is it a web browser interface to Haveno? What will be the main form of accessing the network? Through a dedicated desktop client, or through a website?
+<woodser[m]>	it can be downloaded and opened as an electron app or self hosted and accessed in a browser, but it won't be directly accessible on some externally hosted domain
+<ErCiccione>	About the bounty system. As announced, we want to reward and incentivize contributors. The bounty system is live and you can take a look at which issues have a bounty and their stage on the kanban board: https://github.com/orgs/haveno-dex/projects/2. Keep an eye on this because issues with bounties will be always tracked here.
+<ErCiccione>	The rules are explained in detail in dpcs/bounties.md, but generally, the first who complete an issue gets the reward.
+<ErCiccione>	If you'd like to work on something and be rewarded for it, feel free to open an issue and if we think it worth adding a bounty, we surely will!
+*	rafaelsanches[m] (rafaelsanc@gateway/shell/matrix.org/x-qzewfsbhtgwuviyv) has joined
+<ErCiccione>	there will be more actionable issues with bounty on them
+<ErCiccione>	Woodser already gave an overview of the priorities, if you can help or have ideas criticisms, please feel free to share them in #haveno-dev. Everything is tracked on github, including the outlined priorities: https://github.com/haveno-dex/haveno/issues
+<ErCiccione>	Anyway, the biggest deal right now is the trade protocol: https://github.com/haveno-dex/haveno/blob/master/docs/trade-protocol.md
+<ErCiccione>	as said, it requires some changes to Monero, but they shouldn't be complicated to implement and they are already being worked on. Any questions about the protocol?
+<Lizzie[m]>	I'm mostly interested about where the fee goes.
+<ErCiccione>	The trade fee will go to a dedicated wallet, which will be used to pay the anti-spam fee. One of the main differences with bisq is that with this trade protocol we will have two wallets instead of one (1 for fees,  1 for deposits).
+<ErCiccione>	does that answer your question?
+<Lizzie[m]>	And these fees are only used to cover transaction fees?
+<Lizzie[m]>	Is there any fee charged by the platform itself?
+<Lizzie[m]>	 * And these fees are only used to cover Monero network transaction fees?
+<woodser[m]>	it's separate from transaction fees necessary to put transactions onto the blockchain
+<ErCiccione>	part of it will go to the operators of the platform and will be used to reward operators, maintainers, development etc.
+<ErCiccione>	like bisq does, but instead of going to the dao, it goes directly to the operators
+<Lizzie[m]>	That answers my question, thanks.
+<ErCiccione>	consider we haven't really finalized this aspect.
+<ErCiccione>	meaning, we still have to discuss these details
+*	devbordecraft[m] (devbordecr@gateway/shell/matrix.org/x-luhcslfanoeasydl) has joined
+<ErCiccione>	if there are no more questions i think we can alrerady wrap it up. Short and smooth! :)
+*	Cryptotweetie[m] (marilynmon@gateway/shell/matrix.org/x-szvcknxcvnqxqfch) has joined
+<Cryptotweetie[m]>	Are these text meetups?
+<Cryptotweetie[m]>	I'd like to help if anything is needed atm
+<ErCiccione>	yes, Cryptotweetie there is a meeting in progress 🙂 That sounds good btw, what would you help with?
+<Cryptotweetie[m]>	I can help with any design, videos, marketing, community growth
+<ErCiccione>	nice, help us get java developers! :P
+<ErCiccione>	joke aside, we really need devs, anybody who could help to reach java people interested in working on some bounties is welcome
+<woodser[m]>	videos and design for marketing are always welcome
+<Cryptotweetie[m]>	Sure! I'll ask around
+<ErCiccione>	design definitely!
+<ErCiccione>	alright folks, we can wrap it up here.
+<ErCiccione>	Thanks everyone for coming and if you have questions , feel free to ask!

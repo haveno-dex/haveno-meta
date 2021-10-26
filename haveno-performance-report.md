@@ -4,6 +4,7 @@
 - Run Configuration
 - Performance without DAO
 - Performance with DAO
+- Flame Graphs for Some Thread Types
 - Conclusion
 - References
 
@@ -106,6 +107,23 @@ Here are common setup steps:
 |haveno-XMR_STAGENET_Seed_2002   |RMI TCP Connection(10)-127.0.0.1     |15,583 ms (56.8%)   |SocketInputStream.socketRead0(FileDescriptor, byte, int, int, int)|
 |                                |JFR Periodic Tasks                 |2,748 ms (10%)      |Ignore instrument thread|
 |                                |main                                 |2,731 ms (10%)      |Not found|
+
+# Flame Graphs for Some Thread Types
+Here are some flame graphs for each type of threads which are neither JavaFX nor instrument related above.
+## RMI TCP Connection(*)-127.0.0.1
+![rmi tcp flame graph](https://user-images.githubusercontent.com/5590596/138887885-4abc2187-eaac-4d49-b66d-20a186277d6f.jpg)
+## InvokeLaterDispatcher
+![InvokeLaterDispatcher](https://user-images.githubusercontent.com/5590596/138888955-17f9d468-31c5-4bae-a0f1-90a0d7d6d70c.jpg)
+## RMI TCP Connection(idle)
+![RMI TCP Connection(idle)](https://user-images.githubusercontent.com/5590596/138890352-d147e93b-3217-4505-ba74-49a72a713ec7.jpg)
+## main
+![main](https://user-images.githubusercontent.com/5590596/138890422-7bde7a96-d4ce-422c-a25c-38953db489d9.jpg)
+
+## SeedNodeMain
+![SeedNodeMain](https://user-images.githubusercontent.com/5590596/138890449-5e3545ce-ade6-42b8-9af6-0d14747a3d68.jpg)
+
+
+
 
 # Conclusion
 

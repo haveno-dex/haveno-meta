@@ -114,7 +114,7 @@ Here are some flame graphs for each type of threads which are neither JavaFX nor
 
 ## RMI TCP Connection(*)-127.0.0.1
 
-![rmi tcp flame graph](media/performance-report/RMI TCP Connection(*)-127.0.0.1.jpg)
+![rmi tcp flame graph](media/performance-report/rmi-tcp-conn-127.jpg)
 
 ## InvokeLaterDispatcher
 
@@ -122,7 +122,7 @@ Here are some flame graphs for each type of threads which are neither JavaFX nor
 
 ## RMI TCP Connection(idle)
 
-![RMI TCP Connection(idle)](media/performance-report/RMI TCP Connection(idle).jpg)
+![RMI TCP Connection(idle)](media/performance-report/rmi-tcp-conn-idle.jpg)
 
 ## main
 

@@ -9,3 +9,5 @@
 | Deposit of $20k as requested by the team | | 90.09 | 60.91 | 15/04/2022 | 8/04/2022 |
 | 1st invoice (April) |  | 35.4502369668 | 25.4597630332 | 18/05/2022 | 1/05/2022 |
 | 2nd invoice (first half of May) | | 66.7282240689 | -41.2684610357 | 18/05/2022 | 17/05/2022 |
+| Rate adjustement for first invoice | | 8 | -49.2684610357 | 20/05/2022 | 20/05/2022 |
+| CCS: Milestone 1 | 151 | | 101.731538964 | 20/05/2022 | |

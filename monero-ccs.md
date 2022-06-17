@@ -12,3 +12,4 @@
 | Rate adjustement for first invoice | | 8 | -49.2684610357 | 20/05/2022 | 20/05/2022 |
 | CCS: Milestone 1 | 151 | | 101.731538964 | 20/05/2022 | |
 | 3rd invoice (second half of may) | | 56.8527918782 | 44.8787470858 | 01/06/2022 | 01/06/2022 |
+| 4th invoice (first half of june) |  | 84.3773 | -39.4985529142 | 16/06/2022 | 16/06/2022 |
